@@ -1,20 +1,36 @@
 const express = require('express');
-const { Router } = require('express');
 
-const router = Router();
+const router = express.Router();
 
-router.get('/ping', (req, res) => {
-    res.json({ pong: true });
+
+router.get('/ping',(req,res) =>{
+    res.json({pong:true});
+
 });
 
-router.get('/random', (req, res) => {
+router.get('/random',(req,res)=>{
+
     let nRand = Math.floor(Math.random() * 10);
-    res.json({ random: nRand });
+    res.json({number: nRand});
 });
 
-router.get('/nome/:nome', (req, res) => {
+ router.get('/nome/:nome', (req,res) =>{
     let nome = req.params.nome;
-    res.json({ nome: `Você enviou o nome ${nome}` });
-});
+    res.json({nome});
+ });
+ 
 
-module.exports = router;
+
+// const ApiController = require('../controllers/apiController');
+
+// //const AP = require('../contollers/apiController');
+
+// router.get('/ping', ApiController.ping);
+// router.get('/random', ApiController.random);
+// router.get('/nome/:nome', ApiController.nome);
+
+// router.post('/frases',ApiController.createPrhase);
+
+// router.get('/ping',AP.ping);
+
+ module.exports = router;

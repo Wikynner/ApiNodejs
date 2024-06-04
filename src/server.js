@@ -15,7 +15,7 @@ server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.urlencoded({ extended: true }));
 
 // Usar as rotas de API
-server.use('/api', apiRoutes);
+server.use(apiRoutes);
 
 // Middleware para lidar com rotas não encontradas
 server.use((req, res) => {
