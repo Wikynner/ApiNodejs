@@ -16,13 +16,16 @@ const nome = (req, res) => {
   res.json({ nome: `Você enviou o nome ${nome}` });
 };
 
-const createPrhase = (req,res) =>{
-    res.json({corpo:req.body});
+const createPhrase = async (req, res) => {
+    let {author,txt} = req.body;
+     
+    let newPhrase =await Phrase.create({author,txt});
+    res.json({id: newPhrase.id,author,txt});
 }
-
+ 
 module.exports = {
   ping,
   random,
   nome,
-  createPrhase
-};
+  createPhrase
+}

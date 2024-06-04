@@ -3,6 +3,7 @@ const path = require('path');
 const dotenv = require('dotenv');
 const apiRoutes = require('./routes/api');
 const cors = require('cors');
+
 dotenv.config();
 
 const server = express();

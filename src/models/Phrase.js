@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const { Mysql } = require('../instances/pg');
+const { Mysql, sequelize } = require('../instances/pg');
 
-const Phrase = Mysql.define('Phrase', {
+const Phrase = sequelize.define('Phrase', {
   id: {
     primaryKey: true,
     autoIncrement: true,
@@ -12,9 +12,9 @@ const Phrase = Mysql.define('Phrase', {
   },
   txt: {
     type: DataTypes.STRING
-  }
+  },
 }, {
-  tableName: 'phrases',
+  tableName: 'Phrases',
   timestamps: false
 });
 
