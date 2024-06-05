@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const { Mysql, sequelize } = require('../instances/pg');
 
+
 const Phrase = sequelize.define('Phrase', {
   id: {
     primaryKey: true,
